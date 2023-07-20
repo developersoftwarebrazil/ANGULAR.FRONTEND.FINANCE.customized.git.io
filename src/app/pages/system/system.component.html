@@ -1,0 +1,24 @@
+<sidebar></sidebar>
+<navbar></navbar>
+<div class="container-base">
+  <div class="content-page">
+    <div class="card-header">
+      <div class="card-title">Cadastro de sistema</div>
+    </div>
+    <form class="form-page" [formGroup]="systemForm" (submit)="send()">
+      <div class="row">
+        <div class="row-group">
+          <label for="system">Sistema</label>
+          <input type="text" name="name" id="name" placeholder="Digite o nome do sistema" formControlName="name" required />
+          <label class="error-input" *ngIf="systemForm.get('name')?.errors?.['required']&&systemForm.get('name')?.touched">Campo obrigatório!!!</label>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-group">
+          <input type="submit" value="Salvar" class="btn-primary" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

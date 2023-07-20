@@ -1,0 +1,39 @@
+<div class="container-login">
+  <div class="container-login-central">
+    <div class="container-login-header">
+      <div class="container-login-header-title">
+        <h1>Login Financeiro</h1>
+      </div>
+      <div class="container-login-header-info">
+        <p>Digite o seu email e sua senha para logar no sistema</p>
+      </div>
+    </div>
+    <div class="container-login-form">
+      <form class="form-inputs" [formGroup]="loginForm" (submit)="loginUser()">
+        <div class="group-input">
+          <div class="text-info">
+            Email
+          </div>
+          <input type="text" name="email" id="email" placeholder="Email" class="input-form" formControlName="email" required="">
+          <label *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched" class="error-input">
+            <p>Campo Obrigatório!</p>
+          </label>
+
+        </div>
+        <div class="group-input">
+          <div class="text-info">
+            Senha
+          </div>
+          <input type="password" name="password" id="password" placeholder="senha" class="input-form" formControlName="password" required="">
+          <label *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched" class="error-input">
+            <p>Campo Obrigatório!</p>
+          </label>
+
+        </div>
+        <div class="group-input">
+          <input type="submit" class="btn-login" value="Logar" [ngClass]="{'disabled': !loginForm.valid}" [disabled]="!loginForm.valid">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

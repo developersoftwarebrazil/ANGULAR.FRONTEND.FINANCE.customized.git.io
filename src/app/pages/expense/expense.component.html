@@ -1,0 +1,54 @@
+<sidebar></sidebar>
+<navbar></navbar>
+<div class="container-base">
+  <div class="content-page">
+
+    <div class="card-header">
+      <div class="card-title">Cadastro de Despesaa</div>
+    </div>
+    <form class="form-page" [formGroup]="expenseForm" (submit)="send()">
+      <div class="row">
+        <div class="row-group">
+          <label for="system">Nome</label>
+          <input type="text" name="name" id="name" placeholder="Digite o nome do sistema" formControlName="name" required />
+          <label class="error-input" *ngIf="expenseForm.get('name')?.errors?.['required']&&expenseForm.get('name')?.touched">Campo obrigatório!!!</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-group">
+          <label for="system">Sistema</label>
+          <ng-select class="select-standard" formControlName="expenseSystemsSelect" [(ngModel)]="expenseSystemsSelect" [items]="expenseSystemsList" bindLabel="name" [multiple]="false" [clearable]="false" [searchable]="false"  ></ng-select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-group">
+          <label for="system">Categorias</label>
+          <ng-select class="select-standard" formControlName="categorySelect" [(ngModel)]="categorySelect" [items]="categoryList" bindLabel="name" [multiple]="false" [clearable]="false" [searchable]="false"  ></ng-select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-group">
+          <label for="system">Data de vencimento</label>
+          <input type="text" name="date" id="date" placeholder="dd/mm/aaaa" formControlName="date" required />
+          <label class="error-input" *ngIf="expenseForm.get('date')?.errors?.['required']&&expenseForm.get('date')?.touched">Campo obrigatório!!!</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-group">
+          <label for="system">Valor</label>
+          <input type="number" name="value" id="value" placeholder="R$: Insira um valor aqui!" formControlName="value" required />
+          <label class="error-input" *ngIf="expenseForm.get('value')?.errors?.['required']&&expenseForm.get('value')?.touched">Campo obrigatório!!!</label>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="row-group">
+          <input type="submit" value="Salvar" class="btn-primary" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

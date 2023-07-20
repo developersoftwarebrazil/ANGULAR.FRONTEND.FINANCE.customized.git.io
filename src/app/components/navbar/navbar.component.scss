@@ -1,0 +1,41 @@
+.nav-container{
+  display: flex;
+  background-color: rgba(18, 22, 29);
+  align-items: center;
+  padding-top: 20px;
+  padding-left: 35%;
+  z-index: 9999999;
+  position: fixed;
+}
+/*Navbar*/
+nav.navbar {
+  background-color: rgba(18, 22, 29);
+  // padding-top: 20px;
+  justify-content: right;
+}
+nav.navbar i {
+      border-radius: 50%;
+      cursor: pointer;
+      padding:  0 20px;
+}
+ nav.navbar i:hover, nav.navbar img:hover {
+      cursor: pointer;
+      background: #48545f14;
+      transform: scale(1.05) translateZ(0px);
+ }
+.magnifyin-glass svg{
+ margin-right: 90vh;
+}
+.login-icon{
+  display: flex;
+  align-items: center;
+  justify-content: right ;
+}
+
+/*Profile Pic*/
+.profile-pic {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
